@@ -1,0 +1,281 @@
+1️ Project Folder Structure
+
+
+food-app/
+│
+├── models/
+│   └── userModel.js
+│
+├── routes/
+│   ├── testRoute.js
+│   ├── authRoutes.js
+│   └── userRoutes.js
+│
+├── routes/models/controllers/
+│   ├── authControllers.js
+│   ├── userController.js
+│   └── testControllers.js
+│
+├── config/
+│   └── db.js
+│
+├── .env
+├── server.js
+├── package.json
+└── package-lock.json
+
+Explanation
+
+Folder	Purpose
+
+models	MongoDB schema
+controllers	Business logic
+routes	API endpoints
+config	Database connection
+server.js	Main server file
+
+
+
+
+
+2️ Backend Architecture Flow
+
+Your backend follows the MVC pattern.
+
+Client (Postman / Frontend)
+        │
+        ▼
+     Routes
+        │
+        ▼
+   Controllers
+        │
+        ▼
+      Models
+        │
+        ▼
+     MongoDB
+
+
+
+
+3️ Detailed Flow Diagram (For GitHub)
+
+You can paste this flow diagram in your GitHub README.
+
+User Request (Postman / Frontend)
+        │
+        ▼
+Express Server (server.js)
+        │
+        ▼
+API Route
+/api/v1/auth/register
+/api/v1/auth/login
+/api/v1/user/getUser
+        │
+        ▼
+Route Files
+authRoutes.js
+userRoutes.js
+testRoute.js
+        │
+        ▼
+Controllers
+authControllers.js
+userController.js
+testControllers.js
+        │
+        ▼
+Model Layer
+userModel.js
+        │
+        ▼
+MongoDB Database
+food-app → users collection
+
+
+
+
+4️ API Flow Example
+
+Register API Flow
+
+POST /api/v1/auth/register
+        │
+        ▼
+authRoutes.js
+        │
+        ▼
+registerController()
+        │
+        ▼
+userModel.js
+        │
+        ▼
+MongoDB → users collection
+        │
+        ▼
+Response sent to client
+
+
+
+
+Login API Flow
+
+POST /api/v1/auth/login
+        │
+        ▼
+authRoutes.js
+        │
+        ▼
+loginController()
+        │
+        ▼
+Check user in MongoDB
+        │
+        ▼
+Password match
+        │
+        ▼
+Return response
+
+
+
+
+Get User API Flow
+
+GET /api/v1/user/getUser
+        │
+        ▼
+userRoutes.js
+        │
+        ▼
+getUserController()
+        │
+        ▼
+Return user data
+
+
+
+
+5️ Server Flow (server.js)
+
+Your server.js acts like the main entry point.
+
+Flow:
+
+Start Server
+     │
+     ▼
+Load Environment Variables (.env)
+     │
+     ▼
+Connect MongoDB Database
+     │
+     ▼
+Initialize Express App
+     │
+     ▼
+Load Middleware
+   ├── cors
+   ├── express.json()
+   └── morgan
+     │
+     ▼
+Load Routes
+   ├── /api/v1/test
+   ├── /api/v1/auth
+   └── /api/v1/user
+     │
+     ▼
+Server Listening on PORT 9000
+
+
+
+6️ Database Structure
+
+Your MongoDB collection
+
+food-app
+   └── users
+
+Document Example
+
+{
+  _id: ObjectId,
+  userName: "Rakshit",
+  email: "rakshit@example.com",
+  password: "hashedPassword",
+  phone: "1234567890",
+  address: ["Mumbai, India"],
+  usertype: "client",
+  profile: "profile-url",
+  createdAt: Date,
+  updatedAt: Date
+}
+
+
+
+
+7️ Simple Flow Diagram 
+
+
+
+┌──────────────┐
+            │   Client     │
+            │  (Postman)   │
+            └──────┬───────┘
+                   │
+                   ▼
+           ┌───────────────┐
+           │   Express API │
+           │   server.js   │
+           └──────┬────────┘
+                  │
+                  ▼
+           ┌───────────────┐
+           │     Routes    │
+           │ authRoutes.js │
+           │ userRoutes.js │
+           └──────┬────────┘
+                  │
+                  ▼
+           ┌───────────────┐
+           │  Controllers  │
+           │ authController│
+           │ userController│
+           └──────┬────────┘
+                  │
+                  ▼
+           ┌───────────────┐
+           │     Models    │
+           │  userModel.js │
+           └──────┬────────┘
+                  │
+                  ▼
+           ┌───────────────┐
+           │    MongoDB    │
+           │  users table  │
+           └───────────────┘
+
+
+
+
+8️ Technologies Used
+
+
+
+Node.js
+Express.js
+MongoDB
+Mongoose
+JWT Authentication
+Bcrypt
+Dotenv
+Morgan
+Cors
+
+
+
+It will make your GitHub look much more impressive for recruiters.
