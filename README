@@ -1,0 +1,30 @@
+# Food App Backend
+
+This is the backend API for a Food Ordering Application built using Node.js, Express.js, and MongoDB.
+
+Features:
+- User authentication
+- Food item management
+- API routes for users and food data
+- MongoDB Atlas database integration
+- RESTful API architecture
+
+Tech Stack:
+- Node.js
+- Express.js
+- MongoDB Atlas
+- Mongoose
+- REST API
+
+How to Run:
+
+1. Clone the repository
+git clone https://github.com/Rakshit4949/food-app.git
+
+2. Install dependencies
+npm install
+
+3. Create a .env file and add MongoDB URI
+
+4. Start the server
+node server.js
