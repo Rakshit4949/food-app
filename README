@@ -24,6 +24,29 @@ git clone https://github.com/Rakshit4949/food-app.git
 2. Install dependencies
 npm install
 
+## PROJECT ARCHITECTURE
+Client / Frontend(POSTMAN/REACT)
+        |
+        v
+     API Request
+        |
+        v
+   Express Server (server.js)
+        |
+        v
+       Routes
+   (authRoutes.js, userRoutes.js, testRoute.js)
+        |
+        v
+    Controllers
+   (Handle request logic)
+        |
+        v
+      Models
+   (Mongoose Schema)
+        |
+        v
+   MongoDB Atlas Database
 3. Create a .env file and add MongoDB URI
 
 4. Start the server
